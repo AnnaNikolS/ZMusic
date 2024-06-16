@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E6071A352C1F484700D69094 /* StreamPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6071A342C1F484700D69094 /* StreamPlayerViewModel.swift */; };
+		E6071A372C1F487200D69094 /* StreamPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6071A362C1F487200D69094 /* StreamPlayerView.swift */; };
 		E696336C2C1B793900769EFF /* ZMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696336B2C1B793900769EFF /* ZMusicApp.swift */; };
 		E696336E2C1B793900769EFF /* MusicPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696336D2C1B793900769EFF /* MusicPlayerView.swift */; };
 		E69633702C1B793B00769EFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E696336F2C1B793B00769EFF /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E6071A342C1F484700D69094 /* StreamPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamPlayerViewModel.swift; sourceTree = "<group>"; };
+		E6071A362C1F487200D69094 /* StreamPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamPlayerView.swift; sourceTree = "<group>"; };
 		E69633682C1B793900769EFF /* ZMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E696336B2C1B793900769EFF /* ZMusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMusicApp.swift; sourceTree = "<group>"; };
 		E696336D2C1B793900769EFF /* MusicPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerView.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 			children = (
 				E696337E2C1B7A0B00769EFF /* AudioPlayerViewModel.swift */,
 				E69633862C1BAEBB00769EFF /* PlayListManagerViewModel.swift */,
+				E6071A342C1F484700D69094 /* StreamPlayerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -102,6 +107,7 @@
 			children = (
 				E696336D2C1B793900769EFF /* MusicPlayerView.swift */,
 				E69633882C1BAF2A00769EFF /* PlayListView.swift */,
+				E6071A362C1F487200D69094 /* StreamPlayerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,8 +201,10 @@
 				E696336E2C1B793900769EFF /* MusicPlayerView.swift in Sources */,
 				E69633852C1BAE8600769EFF /* PlayList.swift in Sources */,
 				E696337F2C1B7A0B00769EFF /* AudioPlayerViewModel.swift in Sources */,
+				E6071A352C1F484700D69094 /* StreamPlayerViewModel.swift in Sources */,
 				E69633812C1B7A2800769EFF /* AudioTrack.swift in Sources */,
 				E69633872C1BAEBB00769EFF /* PlayListManagerViewModel.swift in Sources */,
+				E6071A372C1F487200D69094 /* StreamPlayerView.swift in Sources */,
 				E696336C2C1B793900769EFF /* ZMusicApp.swift in Sources */,
 				E69633892C1BAF2A00769EFF /* PlayListView.swift in Sources */,
 			);

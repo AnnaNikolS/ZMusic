@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Playlist: Identifiable, Codable {
-    let id = UUID()
-    var name: String
-    var tracks: [AudioTrack]
-}
+//struct Playlist: Identifiable, Codable {
+//    let id = UUID()
+//    var name: String
+//    var tracks: [AudioTrack]
+//}
