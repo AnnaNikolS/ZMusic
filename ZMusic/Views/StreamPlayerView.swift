@@ -8,21 +8,32 @@
 import SwiftUI
 
 struct StreamPlayerView: View {
-    @StateObject private var viewModel = StreamPlayerViewModel()
-    @State private var streamURL = URL(string: "https://ep256.hostingradio.ru:8052/europaplus256.mp3")!
-
+    
+    @StateObject var viewModel = RadioStationsViewModel()
+    
     var body: some View {
-        VStack {
-            Button(action: {
-                if viewModel.isPlaying {
-                    viewModel.stopStream()
-                } else {
-                    viewModel.playStream(from: streamURL)
+        NavigationStack {
+            ZStack {
+                RadialGradientView(colors: [.white.opacity(0.7), .blue, .indigo, .black], location: .bottomLeading, endRadius: 450)
+                
+                ScrollView {
+                    LazyVStack(spacing: 8) {
+                        ForEach(viewModel.stations) { station in
+                            StreamCardView(
+                                title: station.title,
+                                image: station.image,
+                                isPlaying: viewModel.currentStation?.id == station.id
+                            ) {
+                                viewModel.playRadio(station: station)
+                            }
+                            .padding(.horizontal, 16)
+                        }
+                    }
+                    .padding(.top, 16)
                 }
-            }) {
-                Image(systemName: viewModel.isPlaying ? "pause.fill" : "play.fill")
             }
-            .padding()
+            .navigationTitle("Radio")
+            .customizeNavigationBar()
         }
     }
 }

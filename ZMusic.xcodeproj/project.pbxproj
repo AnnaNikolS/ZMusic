@@ -9,12 +9,20 @@
 /* Begin PBXBuildFile section */
 		E6071A352C1F484700D69094 /* StreamPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6071A342C1F484700D69094 /* StreamPlayerViewModel.swift */; };
 		E6071A372C1F487200D69094 /* StreamPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6071A362C1F487200D69094 /* StreamPlayerView.swift */; };
+		E6071A3C2C1F886E00D69094 /* RadialGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6071A3B2C1F886E00D69094 /* RadialGradientView.swift */; };
+		E614E62C2C1F9A4500745493 /* YourTracksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E614E62B2C1F9A4500745493 /* YourTracksView.swift */; };
+		E614E62E2C1FBB6F00745493 /* RecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E614E62D2C1FBB6F00745493 /* RecentView.swift */; };
+		E614E6302C20668200745493 /* TrackCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E614E62F2C20668200745493 /* TrackCellView.swift */; };
+		E614E6332C2071DA00745493 /* ImportFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E614E6322C2071DA00745493 /* ImportFileManager.swift */; };
+		E614E6382C2097D900745493 /* CustomizeNB + CustomizeTB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E614E6372C2097D900745493 /* CustomizeNB + CustomizeTB.swift */; };
+		E614E63A2C20A82F00745493 /* StreamCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E614E6392C20A82F00745493 /* StreamCardView.swift */; };
+		E614E63C2C20AB7600745493 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = E614E63B2C20AB7600745493 /* Stream.swift */; };
 		E696336C2C1B793900769EFF /* ZMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696336B2C1B793900769EFF /* ZMusicApp.swift */; };
-		E696336E2C1B793900769EFF /* MusicPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696336D2C1B793900769EFF /* MusicPlayerView.swift */; };
+		E696336E2C1B793900769EFF /* ZMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696336D2C1B793900769EFF /* ZMusicView.swift */; };
 		E69633702C1B793B00769EFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E696336F2C1B793B00769EFF /* Assets.xcassets */; };
 		E69633732C1B793B00769EFF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E69633722C1B793B00769EFF /* Preview Assets.xcassets */; };
-		E696337F2C1B7A0B00769EFF /* AudioPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696337E2C1B7A0B00769EFF /* AudioPlayerViewModel.swift */; };
-		E69633812C1B7A2800769EFF /* AudioTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69633802C1B7A2800769EFF /* AudioTrack.swift */; };
+		E696337F2C1B7A0B00769EFF /* YourTracksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696337E2C1B7A0B00769EFF /* YourTracksViewModel.swift */; };
+		E69633812C1B7A2800769EFF /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69633802C1B7A2800769EFF /* Track.swift */; };
 		E69633852C1BAE8600769EFF /* PlayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69633842C1BAE8600769EFF /* PlayList.swift */; };
 		E69633872C1BAEBB00769EFF /* PlayListManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69633862C1BAEBB00769EFF /* PlayListManagerViewModel.swift */; };
 		E69633892C1BAF2A00769EFF /* PlayListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69633882C1BAF2A00769EFF /* PlayListView.swift */; };
@@ -23,13 +31,21 @@
 /* Begin PBXFileReference section */
 		E6071A342C1F484700D69094 /* StreamPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamPlayerViewModel.swift; sourceTree = "<group>"; };
 		E6071A362C1F487200D69094 /* StreamPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamPlayerView.swift; sourceTree = "<group>"; };
+		E6071A3B2C1F886E00D69094 /* RadialGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialGradientView.swift; sourceTree = "<group>"; };
+		E614E62B2C1F9A4500745493 /* YourTracksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourTracksView.swift; sourceTree = "<group>"; };
+		E614E62D2C1FBB6F00745493 /* RecentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentView.swift; sourceTree = "<group>"; };
+		E614E62F2C20668200745493 /* TrackCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCellView.swift; sourceTree = "<group>"; };
+		E614E6322C2071DA00745493 /* ImportFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportFileManager.swift; sourceTree = "<group>"; };
+		E614E6372C2097D900745493 /* CustomizeNB + CustomizeTB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomizeNB + CustomizeTB.swift"; sourceTree = "<group>"; };
+		E614E6392C20A82F00745493 /* StreamCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamCardView.swift; sourceTree = "<group>"; };
+		E614E63B2C20AB7600745493 /* Stream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
 		E69633682C1B793900769EFF /* ZMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E696336B2C1B793900769EFF /* ZMusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMusicApp.swift; sourceTree = "<group>"; };
-		E696336D2C1B793900769EFF /* MusicPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerView.swift; sourceTree = "<group>"; };
+		E696336D2C1B793900769EFF /* ZMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMusicView.swift; sourceTree = "<group>"; };
 		E696336F2C1B793B00769EFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E69633722C1B793B00769EFF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		E696337E2C1B7A0B00769EFF /* AudioPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerViewModel.swift; sourceTree = "<group>"; };
-		E69633802C1B7A2800769EFF /* AudioTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTrack.swift; sourceTree = "<group>"; };
+		E696337E2C1B7A0B00769EFF /* YourTracksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourTracksViewModel.swift; sourceTree = "<group>"; };
+		E69633802C1B7A2800769EFF /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		E69633842C1BAE8600769EFF /* PlayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayList.swift; sourceTree = "<group>"; };
 		E69633862C1BAEBB00769EFF /* PlayListManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListManagerViewModel.swift; sourceTree = "<group>"; };
 		E69633882C1BAF2A00769EFF /* PlayListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListView.swift; sourceTree = "<group>"; };
@@ -46,6 +62,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E6071A3A2C1F883B00D69094 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				E6071A3B2C1F886E00D69094 /* RadialGradientView.swift */,
+				E614E62F2C20668200745493 /* TrackCellView.swift */,
+				E614E6392C20A82F00745493 /* StreamCardView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		E614E6312C2071BD00745493 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E614E6322C2071DA00745493 /* ImportFileManager.swift */,
+				E614E6372C2097D900745493 /* CustomizeNB + CustomizeTB.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		E696335F2C1B793900769EFF = {
 			isa = PBXGroup;
 			children = (
@@ -65,11 +100,12 @@
 		E696336A2C1B793900769EFF /* ZMusic */ = {
 			isa = PBXGroup;
 			children = (
-				E696337D2C1B797700769EFF /* App */,
-				E696337C2C1B796A00769EFF /* Resources */,
+				E69633792C1B794500769EFF /* Models */,
 				E696337B2C1B795900769EFF /* Views */,
 				E696337A2C1B794E00769EFF /* ViewModels */,
-				E69633792C1B794500769EFF /* Models */,
+				E614E6312C2071BD00745493 /* Helpers */,
+				E696337C2C1B796A00769EFF /* Resources */,
+				E696337D2C1B797700769EFF /* App */,
 				E69633712C1B793B00769EFF /* Preview Content */,
 			);
 			path = ZMusic;
@@ -86,7 +122,8 @@
 		E69633792C1B794500769EFF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E69633802C1B7A2800769EFF /* AudioTrack.swift */,
+				E69633802C1B7A2800769EFF /* Track.swift */,
+				E614E63B2C20AB7600745493 /* Stream.swift */,
 				E69633842C1BAE8600769EFF /* PlayList.swift */,
 			);
 			path = Models;
@@ -95,9 +132,9 @@
 		E696337A2C1B794E00769EFF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				E696337E2C1B7A0B00769EFF /* AudioPlayerViewModel.swift */,
-				E69633862C1BAEBB00769EFF /* PlayListManagerViewModel.swift */,
+				E696337E2C1B7A0B00769EFF /* YourTracksViewModel.swift */,
 				E6071A342C1F484700D69094 /* StreamPlayerViewModel.swift */,
+				E69633862C1BAEBB00769EFF /* PlayListManagerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -105,9 +142,12 @@
 		E696337B2C1B795900769EFF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E696336D2C1B793900769EFF /* MusicPlayerView.swift */,
-				E69633882C1BAF2A00769EFF /* PlayListView.swift */,
+				E696336D2C1B793900769EFF /* ZMusicView.swift */,
+				E614E62B2C1F9A4500745493 /* YourTracksView.swift */,
 				E6071A362C1F487200D69094 /* StreamPlayerView.swift */,
+				E614E62D2C1FBB6F00745493 /* RecentView.swift */,
+				E69633882C1BAF2A00769EFF /* PlayListView.swift */,
+				E6071A3A2C1F883B00D69094 /* Subviews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,14 +238,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E696336E2C1B793900769EFF /* MusicPlayerView.swift in Sources */,
+				E614E63A2C20A82F00745493 /* StreamCardView.swift in Sources */,
+				E696336E2C1B793900769EFF /* ZMusicView.swift in Sources */,
 				E69633852C1BAE8600769EFF /* PlayList.swift in Sources */,
-				E696337F2C1B7A0B00769EFF /* AudioPlayerViewModel.swift in Sources */,
+				E696337F2C1B7A0B00769EFF /* YourTracksViewModel.swift in Sources */,
+				E614E63C2C20AB7600745493 /* Stream.swift in Sources */,
 				E6071A352C1F484700D69094 /* StreamPlayerViewModel.swift in Sources */,
-				E69633812C1B7A2800769EFF /* AudioTrack.swift in Sources */,
+				E614E6332C2071DA00745493 /* ImportFileManager.swift in Sources */,
+				E69633812C1B7A2800769EFF /* Track.swift in Sources */,
+				E614E62C2C1F9A4500745493 /* YourTracksView.swift in Sources */,
+				E614E6302C20668200745493 /* TrackCellView.swift in Sources */,
+				E6071A3C2C1F886E00D69094 /* RadialGradientView.swift in Sources */,
+				E614E62E2C1FBB6F00745493 /* RecentView.swift in Sources */,
 				E69633872C1BAEBB00769EFF /* PlayListManagerViewModel.swift in Sources */,
 				E6071A372C1F487200D69094 /* StreamPlayerView.swift in Sources */,
 				E696336C2C1B793900769EFF /* ZMusicApp.swift in Sources */,
+				E614E6382C2097D900745493 /* CustomizeNB + CustomizeTB.swift in Sources */,
 				E69633892C1BAF2A00769EFF /* PlayListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
