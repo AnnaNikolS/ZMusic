@@ -18,6 +18,9 @@ struct YourTracksView: View {
                 List {
                     ForEach(viewModel.tracks) { track in
                         TrackCellView(track: track)
+                            .onTapGesture {
+                                viewModel.playAudio(track: track)
+                            }
                     }
                 }
                 .navigationTitle("Your Tracks")
