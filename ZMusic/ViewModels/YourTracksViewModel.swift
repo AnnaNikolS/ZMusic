@@ -6,10 +6,7 @@
 //
 
 import SwiftUI
-import AVFoundation
 
 class YourTracksViewModel: ObservableObject {
-    
     @Published var tracks: [Track] = []
-
 }

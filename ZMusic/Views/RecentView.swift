@@ -11,7 +11,7 @@ struct RecentView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                RadialGradientView(colors: [.darkRed, .pink, .orange, .black], location: .bottomTrailing, endRadius: 500)
+                RadialGradientView(colors: [.purple, .cyan, .black], location: .bottomTrailing, endRadius: 500)
             }
             .navigationTitle("Recent auditions")
             .customizeNavigationBar()

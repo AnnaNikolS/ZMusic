@@ -15,11 +15,10 @@ struct ZMusicView: View {
                     Image(systemName: "music.note.list")
                     Text("Home")
                 }
-            StreamPlayerView()
+            RadioPlayerView()
                 .tabItem {
                     Image(systemName: "dot.radiowaves.left.and.right")
                     Text("Radio")
-                    
                 }
             RecentView()
                 .tabItem {

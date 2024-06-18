@@ -13,14 +13,14 @@ struct RadialGradientView: View {
     let endRadius: CGFloat
     
     var body: some View {
-            RadialGradient(
-                    colors: colors,
-                    center: location,
-                    startRadius: 0,
-                    endRadius: endRadius
-                )
-            .ignoresSafeArea()
-        }
+        RadialGradient(
+            colors: colors,
+            center: location,
+            startRadius: 0,
+            endRadius: endRadius
+        )
+        .ignoresSafeArea()
+    }
 }
 
 #Preview {

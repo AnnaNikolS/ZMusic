@@ -24,7 +24,6 @@ struct YourTracksView: View {
                 .listStyle(.plain)
             }
             .customizeNavigationBar()
-            
             .toolbar {
                 ToolbarItem(placement: .automatic) {
                     Button {

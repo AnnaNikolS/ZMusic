@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TrackCellView: View {
     let track: Track
+    
     var body: some View {
         HStack {
             if let uiImage = UIImage(data: track.image ?? Data()) {
@@ -32,7 +33,6 @@ struct TrackCellView: View {
             VStack(alignment: .leading) {
                 Text(track.name)
                     .font(.headline)
-                
                 Text(track.artist ?? "Unknown artist")
             }
             
