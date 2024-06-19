@@ -18,7 +18,7 @@ struct RadioPlayerView: View {
                 RadialGradientView(colors: [.darkPink, .pink, .orange, .black], location: .bottomTrailing, endRadius: 500)
                 
                 VStack(alignment: .leading) {
-                    Text("Настройся на волну")
+                    Text("Настройся на волну!")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, 16)
                         .fontDesign(.rounded)
@@ -28,7 +28,7 @@ struct RadioPlayerView: View {
                 
                 VStack {
                     ACarousel(viewModel.cards,
-                              id: \.id,
+                              id: \.streamURL,
                               index: $currentIndex,
                               spacing: 16,
                               headspace: 20,

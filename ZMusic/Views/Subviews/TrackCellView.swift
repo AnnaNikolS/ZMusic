@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TrackCellView: View {
     let track: Track
-    
+    let formatDuration: (_ duration: TimeInterval?) -> String
     var body: some View {
         HStack {
             if let uiImage = UIImage(data: track.image ?? Data()) {
@@ -46,15 +46,4 @@ struct TrackCellView: View {
         .listRowBackground(Color.clear)
         .listRowSeparator(.hidden)
     }
-    
-    func formatDuration(_ duration: TimeInterval?) -> String {
-        guard let duration = duration else { return "00:00" }
-        let minutes = Int(duration) / 60
-        let seconds = Int(duration) % 60
-        return String(format: "%02d:%02d", minutes, seconds)
-    }
-}
-
-#Preview {
-    TrackCellView(track: Track(name: "ttt", data: Data()))
 }
