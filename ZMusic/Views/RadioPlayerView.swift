@@ -9,8 +9,11 @@ import SwiftUI
 import ACarousel
 
 struct RadioPlayerView: View {
-    @StateObject var viewModel = RadioCardViewModel()
+    //MARK: - Private Properties
     @State private var currentIndex: Int = 0
+    
+    //MARK: - Properties
+    @StateObject var viewModel = RadioCardViewModel()
     
     var body: some View {
         NavigationStack {

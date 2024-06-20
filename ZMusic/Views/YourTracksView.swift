@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct YourTracksView: View {
-    @StateObject var viewModel = YourTracksViewModel()
+    
+    //MARK: - Private Properties
     @State private var showFiles = false
     @State private var showDetails = false
     @State private var isDragging = false
     @Namespace private var playerAnimation
     
+    //MARK: - Properties
+    @StateObject var viewModel = YourTracksViewModel()
+    
+    //MARK: - Getters
     var frameImage: CGFloat {
         showDetails ? 290 : 60
     }
@@ -22,26 +27,28 @@ struct YourTracksView: View {
         NavigationStack {
             
             ZStack {
+                /// Background
                 RadialGradientView(colors: [.red, .purple, .blue, .black], location: .bottom, endRadius: 500)
                 
                 VStack {
-                    // list of tracks
+                    /// List of tracks
                     List {
                         ForEach(viewModel.tracks) { track in
-                            TrackCellView(track: track, formatDuration: viewModel.formatDuration(_:))
-                                .onTapGesture {
-                                    viewModel.playAudio(track: track)
-                                }
+                            TrackCellView(track: track, formatDuration: viewModel.formatDuration) 
+                                    .onTapGesture {
+                                        viewModel.playAudio(track: track)
+                                        viewModel.isPlaying = true
+                                
+                            }
                         }
+                        .onDelete(perform: viewModel.delete)
                     }
                     .navigationTitle("Your Tracks")
                     .listStyle(.plain)
                     
                     Spacer()
                     
-                    // player
                     if viewModel.currentTrack != nil {
-                        
                         Player()
                             .frame(height: showDetails ? UIScreen.main.bounds.height : 70)
                             .onTapGesture {
@@ -69,11 +76,12 @@ struct YourTracksView: View {
         }
     }
     
-    //MARK: - Methods
+    //MARK: - Private Methods
     @ViewBuilder
     private func Player() -> some View {
+        //MARK: - Player
         VStack {
-            // player mini
+            //MARK: - Mini player
             HStack {
                 if let uiImage = UIImage(data: viewModel.currentTrack?.image ?? Data()) {
                     Image(uiImage: uiImage)
@@ -152,6 +160,7 @@ struct YourTracksView: View {
                         }
                     }
                     .offset(y: -38)
+                    .accentColor(.white)
                     .onAppear {
                         Timer.scheduledTimer(
                             withTimeInterval: 0.5,
@@ -163,7 +172,7 @@ struct YourTracksView: View {
                     HStack(spacing: 40) {
                         customButton(
                             size: .title2,
-                            action: {},
+                            action: { viewModel.backward() },
                             color: .white,
                             name: "backward.fill"
                         )
@@ -177,7 +186,7 @@ struct YourTracksView: View {
                         
                         customButton(
                             size: .title2,
-                            action: {},
+                            action: { viewModel.forward() },
                             color: .white,
                             name: "forward.fill"
                         )

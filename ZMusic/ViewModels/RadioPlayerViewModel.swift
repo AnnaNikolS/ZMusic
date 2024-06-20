@@ -11,8 +11,12 @@ import AVFoundation
 
 
 class RadioCardViewModel: ObservableObject {
+    
+    //MARK: - Properties
     @Published var cards: [Card] = []
     @Published var currentStation: Card? = nil
+    
+    //MARK: - Private Properties
     private var player: AVPlayer?
     
     init() {
@@ -62,10 +66,10 @@ class RadioCardViewModel: ObservableObject {
                 description: "DFM — это ритм современной поп-культуры и хит-парад танцевальных треков. Включи волну, где каждый звук — это энергия движений.",
                 streamURL: URL(string: "https://dfm.hostingradio.ru/dfm128.mp3")
             )
-            
         ]
     }
     
+    //MARK: - Methods
     func playRadio(station: Card) {
         guard let url = station.streamURL else {
             print("No URL for station: \(station.title)")

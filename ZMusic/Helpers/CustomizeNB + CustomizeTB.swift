@@ -47,7 +47,7 @@ struct BlurredNavigationBar: UIViewRepresentable {
     func makeUIView(context: Context) -> UIView {
         let view = UIView(frame: .zero)
         
-        let blurEffect = UIBlurEffect(style: .dark) // Используем темный стиль размытия
+        let blurEffect = UIBlurEffect(style: .dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
@@ -73,6 +73,7 @@ struct BlurredNavigationBar: UIViewRepresentable {
     func updateUIView(_ uiView: UIView, context: Context) {}
 }
 
+//MARK: - NB + TB
 extension View {
     func customizeNavigationBar() -> some View {
         self.background(BlurredNavigationBar())

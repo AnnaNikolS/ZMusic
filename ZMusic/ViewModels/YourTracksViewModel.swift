@@ -8,7 +8,9 @@
 import SwiftUI
 import AVFAudio
 
-class YourTracksViewModel: ObservableObject {
+class YourTracksViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
+    
+    //MARK: - Properties
     @Published var tracks: [Track] = []
     @Published var player: AVAudioPlayer?
     @Published var currentIndex: Int?
@@ -16,6 +18,7 @@ class YourTracksViewModel: ObservableObject {
     @Published var currentTime: TimeInterval = 0.0
     @Published var totalTime: TimeInterval = 0.0
     
+    //MARK: - Getters
     var currentTrack: Track? {
         guard let currentIndex = currentIndex, tracks.indices.contains(currentIndex) else {
             return nil
@@ -34,6 +37,7 @@ class YourTracksViewModel: ObservableObject {
     func playAudio(track: Track) {
         do {
             self.player = try AVAudioPlayer(data: track.data)
+            self.player?.delegate = self
             self.player?.play()
             totalTime = player?.duration ?? 0.0
             isPlaying.toggle()
@@ -43,6 +47,26 @@ class YourTracksViewModel: ObservableObject {
         } catch {
             print("Error in audio playback: \(error.localizedDescription)")
         }
+    }
+    
+    func stopAudio() {
+        self.player?.stop()
+        self.player = nil
+        isPlaying = false
+    }
+    
+    func forward() {
+        guard let currentIndex = currentIndex else { return }
+        let nextIndex = currentIndex + 1 < tracks.count ? currentIndex + 1 : 0
+        playAudio(track: tracks[nextIndex])
+        isPlaying = true
+    }
+    
+    func backward() {
+        guard let currentIndex = currentIndex else { return }
+        let previousIndex = currentIndex > 0 ? currentIndex - 1 : tracks.count - 1
+        playAudio(track: tracks[previousIndex])
+        isPlaying = true
     }
     
     func seekAudio(time: TimeInterval) {
@@ -61,5 +85,19 @@ class YourTracksViewModel: ObservableObject {
             self.player?.play()
         }
         isPlaying.toggle()
+    }
+    
+    func delete(offsets: IndexSet) {
+        if let first = offsets.first {
+            stopAudio()
+            tracks.remove(at: first)
+        }
+    }
+    
+    //MARK: - AVAudioPlayerDelegate
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        if flag {
+            forward()
+        }
     }
 }

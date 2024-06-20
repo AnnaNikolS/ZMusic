@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct RecentView: View {
+    
+    //MARK: - Properties
+    @StateObject var viewModel = YourTracksViewModel()
+    
     var body: some View {
         NavigationStack {
             ZStack {

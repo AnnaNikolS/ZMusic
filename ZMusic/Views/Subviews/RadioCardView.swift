@@ -8,6 +8,8 @@ import SwiftUI
 import ACarousel
 
 struct RadioCardView: View {
+    
+    //MARK: - Properties
     let card: Card
     let action: () -> Void
     let isPlaying: Bool

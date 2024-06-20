@@ -7,9 +7,12 @@
 
 import SwiftUI
 
-struct TrackCellView: View {
+struct TrackCellView: View {    
+    
+    //MARK: - Properties
     let track: Track
     let formatDuration: (_ duration: TimeInterval?) -> String
+    
     var body: some View {
         HStack {
             if let uiImage = UIImage(data: track.image ?? Data()) {

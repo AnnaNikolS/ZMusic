@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RadialGradientView: View {
+    
+    //MARK: - Properties
     let colors: [Color]
     let location: UnitPoint
     let endRadius: CGFloat

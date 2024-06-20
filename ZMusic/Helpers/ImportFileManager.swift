@@ -11,9 +11,10 @@ import AVFoundation
 
 struct ImportFileManager: UIViewControllerRepresentable {
     
+    //MARK: - Properties
     @Binding var tracks: [Track]
     
-    
+    //MARK: - Coordinator Methods
     func makeCoordinator() -> Coordinator {
         Coordinator(parent: self)
     }
@@ -42,7 +43,7 @@ struct ImportFileManager: UIViewControllerRepresentable {
             defer { url.stopAccessingSecurityScopedResource() }
             
             do {
-              
+                
                 let document = try Data(contentsOf: url)
                 
                 let asset = AVAsset(url: url)
