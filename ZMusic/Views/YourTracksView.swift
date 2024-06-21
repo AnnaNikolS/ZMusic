@@ -71,23 +71,9 @@ struct YourTracksView: View {
                     }
                 }
             }
-            .toolbar {
-                ToolbarItem(placement: .automatic) {
-                    Button {
-                        showSettings.toggle()
-                    } label: {
-                        Image(systemName: "gearshape")
-                            .foregroundStyle(.white)
-                    }
-                }
-            }
-            
         }
         .sheet(isPresented: $showFiles) {
             ImportFileManager(tracks: $viewModel.tracks).ignoresSafeArea()
-        }
-        .sheet(isPresented: $showSettings) {
-            
         }
     }
     
@@ -168,7 +154,7 @@ struct YourTracksView: View {
                     }
                     .offset(y: -38)
                     
-                    Slider(value: $viewModel.currentTime, in: 0...viewModel.totalTime) { editing in
+                    Slider(value: $viewModel.currentTime, in: 0...viewModel.totalTime, step: 1.0) { editing in
                         isDragging = editing
                         if !editing {
                             viewModel.seekAudio(time: viewModel.currentTime)
@@ -179,7 +165,7 @@ struct YourTracksView: View {
                     .onAppear {
                         Timer.scheduledTimer(
                             withTimeInterval: 0.5,
-                            repeats: true) { _ in
+                            repeats: true) { time in
                                 viewModel.update()
                             }
                     }

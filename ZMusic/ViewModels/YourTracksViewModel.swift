@@ -136,7 +136,6 @@ class YourTracksViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
         isPlaying.toggle()
     }
     
-    //MARK: - AVAudioPlayerDelegate
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         if flag {
             forward()
