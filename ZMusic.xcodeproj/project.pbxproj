@@ -13,13 +13,18 @@
 		E614E6302C20668200745493 /* TrackCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E614E62F2C20668200745493 /* TrackCellView.swift */; };
 		E614E6332C2071DA00745493 /* ImportFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E614E6322C2071DA00745493 /* ImportFileManager.swift */; };
 		E614E6382C2097D900745493 /* CustomizeNB + CustomizeTB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E614E6372C2097D900745493 /* CustomizeNB + CustomizeTB.swift */; };
+		E65BBBA02C24E4900057B8E1 /* RecentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65BBB9F2C24E4900057B8E1 /* RecentViewModel.swift */; };
+		E65BBBA22C24E6C10057B8E1 /* RecentTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65BBBA12C24E6C10057B8E1 /* RecentTrack.swift */; };
+		E65BBBA42C24E7CC0057B8E1 /* RecentTrackCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65BBBA32C24E7CC0057B8E1 /* RecentTrackCellView.swift */; };
+		E65BBBA62C24EC950057B8E1 /* RecentTracksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65BBBA52C24EC950057B8E1 /* RecentTracksRepository.swift */; };
+		E65BBBAF2C2596850057B8E1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E65BBBAE2C2596850057B8E1 /* RealmSwift */; };
+		E65BBBB12C259AD30057B8E1 /* RealmTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65BBBB02C259AD30057B8E1 /* RealmTrack.swift */; };
 		E696336C2C1B793900769EFF /* ZMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696336B2C1B793900769EFF /* ZMusicApp.swift */; };
 		E696336E2C1B793900769EFF /* ZMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696336D2C1B793900769EFF /* ZMusicView.swift */; };
 		E69633702C1B793B00769EFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E696336F2C1B793B00769EFF /* Assets.xcassets */; };
 		E69633732C1B793B00769EFF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E69633722C1B793B00769EFF /* Preview Assets.xcassets */; };
 		E696337F2C1B7A0B00769EFF /* YourTracksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696337E2C1B7A0B00769EFF /* YourTracksViewModel.swift */; };
 		E69633812C1B7A2800769EFF /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69633802C1B7A2800769EFF /* Track.swift */; };
-		E69633852C1BAE8600769EFF /* PlayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69633842C1BAE8600769EFF /* PlayList.swift */; };
 		E6EF70C12C21DFAE0018F219 /* ACarousel in Frameworks */ = {isa = PBXBuildFile; productRef = E6EF70C02C21DFAE0018F219 /* ACarousel */; };
 		E6EF70C32C21DFEA0018F219 /* RadioCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EF70C22C21DFEA0018F219 /* RadioCardView.swift */; };
 		E6EF70C52C21E1000018F219 /* RadioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EF70C42C21E1000018F219 /* RadioPlayerView.swift */; };
@@ -35,6 +40,11 @@
 		E614E6322C2071DA00745493 /* ImportFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportFileManager.swift; sourceTree = "<group>"; };
 		E614E6372C2097D900745493 /* CustomizeNB + CustomizeTB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomizeNB + CustomizeTB.swift"; sourceTree = "<group>"; };
 		E65BBB9E2C24D6DE0057B8E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E65BBB9F2C24E4900057B8E1 /* RecentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentViewModel.swift; sourceTree = "<group>"; };
+		E65BBBA12C24E6C10057B8E1 /* RecentTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTrack.swift; sourceTree = "<group>"; };
+		E65BBBA32C24E7CC0057B8E1 /* RecentTrackCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTrackCellView.swift; sourceTree = "<group>"; };
+		E65BBBA52C24EC950057B8E1 /* RecentTracksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTracksRepository.swift; sourceTree = "<group>"; };
+		E65BBBB02C259AD30057B8E1 /* RealmTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTrack.swift; sourceTree = "<group>"; };
 		E69633682C1B793900769EFF /* ZMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E696336B2C1B793900769EFF /* ZMusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMusicApp.swift; sourceTree = "<group>"; };
 		E696336D2C1B793900769EFF /* ZMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZMusicView.swift; sourceTree = "<group>"; };
@@ -42,7 +52,6 @@
 		E69633722C1B793B00769EFF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E696337E2C1B7A0B00769EFF /* YourTracksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourTracksViewModel.swift; sourceTree = "<group>"; };
 		E69633802C1B7A2800769EFF /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
-		E69633842C1BAE8600769EFF /* PlayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayList.swift; sourceTree = "<group>"; };
 		E6EF70C22C21DFEA0018F219 /* RadioCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioCardView.swift; sourceTree = "<group>"; };
 		E6EF70C42C21E1000018F219 /* RadioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerView.swift; sourceTree = "<group>"; };
 		E6EF70D02C21FBEF0018F219 /* RadioPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerViewModel.swift; sourceTree = "<group>"; };
@@ -54,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E65BBBAF2C2596850057B8E1 /* RealmSwift in Frameworks */,
 				E6EF70C12C21DFAE0018F219 /* ACarousel in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,6 +77,7 @@
 				E6071A3B2C1F886E00D69094 /* RadialGradientView.swift */,
 				E614E62F2C20668200745493 /* TrackCellView.swift */,
 				E6EF70C22C21DFEA0018F219 /* RadioCardView.swift */,
+				E65BBBA32C24E7CC0057B8E1 /* RecentTrackCellView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -75,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				E614E6322C2071DA00745493 /* ImportFileManager.swift */,
+				E65BBBA52C24EC950057B8E1 /* RecentTracksRepository.swift */,
 				E614E6372C2097D900745493 /* CustomizeNB + CustomizeTB.swift */,
 			);
 			path = Helpers;
@@ -124,7 +136,8 @@
 			children = (
 				E69633802C1B7A2800769EFF /* Track.swift */,
 				E6EF70D22C21FC020018F219 /* Card.swift */,
-				E69633842C1BAE8600769EFF /* PlayList.swift */,
+				E65BBBA12C24E6C10057B8E1 /* RecentTrack.swift */,
+				E65BBBB02C259AD30057B8E1 /* RealmTrack.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -134,6 +147,7 @@
 			children = (
 				E696337E2C1B7A0B00769EFF /* YourTracksViewModel.swift */,
 				E6EF70D02C21FBEF0018F219 /* RadioPlayerViewModel.swift */,
+				E65BBB9F2C24E4900057B8E1 /* RecentViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -184,6 +198,7 @@
 			name = ZMusic;
 			packageProductDependencies = (
 				E6EF70C02C21DFAE0018F219 /* ACarousel */,
+				E65BBBAE2C2596850057B8E1 /* RealmSwift */,
 			);
 			productName = ZMusic;
 			productReference = E69633682C1B793900769EFF /* ZMusic.app */;
@@ -215,6 +230,7 @@
 			mainGroup = E696335F2C1B793900769EFF;
 			packageReferences = (
 				E6EF70BF2C21DFAE0018F219 /* XCRemoteSwiftPackageReference "ACarousel" */,
+				E65BBBAD2C2596850057B8E1 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = E69633692C1B793900769EFF /* Products */;
 			projectDirPath = "";
@@ -243,20 +259,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				E696336E2C1B793900769EFF /* ZMusicView.swift in Sources */,
-				E69633852C1BAE8600769EFF /* PlayList.swift in Sources */,
 				E696337F2C1B7A0B00769EFF /* YourTracksViewModel.swift in Sources */,
+				E65BBBA22C24E6C10057B8E1 /* RecentTrack.swift in Sources */,
 				E6EF70D12C21FBEF0018F219 /* RadioPlayerViewModel.swift in Sources */,
+				E65BBBA42C24E7CC0057B8E1 /* RecentTrackCellView.swift in Sources */,
 				E6EF70C32C21DFEA0018F219 /* RadioCardView.swift in Sources */,
 				E614E6332C2071DA00745493 /* ImportFileManager.swift in Sources */,
 				E69633812C1B7A2800769EFF /* Track.swift in Sources */,
 				E614E62C2C1F9A4500745493 /* YourTracksView.swift in Sources */,
 				E614E6302C20668200745493 /* TrackCellView.swift in Sources */,
+				E65BBBA62C24EC950057B8E1 /* RecentTracksRepository.swift in Sources */,
 				E6EF70C52C21E1000018F219 /* RadioPlayerView.swift in Sources */,
 				E6071A3C2C1F886E00D69094 /* RadialGradientView.swift in Sources */,
 				E614E62E2C1FBB6F00745493 /* RecentView.swift in Sources */,
 				E696336C2C1B793900769EFF /* ZMusicApp.swift in Sources */,
+				E65BBBA02C24E4900057B8E1 /* RecentViewModel.swift in Sources */,
 				E614E6382C2097D900745493 /* CustomizeNB + CustomizeTB.swift in Sources */,
 				E6EF70D32C21FC020018F219 /* Card.swift in Sources */,
+				E65BBBB12C259AD30057B8E1 /* RealmTrack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +488,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E65BBBAD2C2596850057B8E1 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		E6EF70BF2C21DFAE0018F219 /* XCRemoteSwiftPackageReference "ACarousel" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/JWAutumn/ACarousel.git";
@@ -479,6 +507,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E65BBBAE2C2596850057B8E1 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E65BBBAD2C2596850057B8E1 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		E6EF70C02C21DFAE0018F219 /* ACarousel */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E6EF70BF2C21DFAE0018F219 /* XCRemoteSwiftPackageReference "ACarousel" */;

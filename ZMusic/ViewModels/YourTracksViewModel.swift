@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AVFAudio
+import RealmSwift
 
 class YourTracksViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
     
@@ -17,6 +18,19 @@ class YourTracksViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
     @Published var isPlaying = false
     @Published var currentTime: TimeInterval = 0.0
     @Published var totalTime: TimeInterval = 0.0
+    @Published var recentlyPlayed: [RecentTrack] = []
+    
+    //MARK: - Private Properties
+    private var repository: RealmTrackRepository
+    private var notificationToken: NotificationToken?
+    
+    // MARK: - Initializer
+    override init() {
+        self.repository = RealmTrackRepository.shared
+        super.init()
+        loadTracksFromRealm()
+        observeRecentlyPlayed()
+    }
     
     //MARK: - Getters
     var currentTrack: Track? {
@@ -24,6 +38,31 @@ class YourTracksViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
             return nil
         }
         return tracks[currentIndex]
+    }
+    
+    //MARK: - Realm Methods
+    // loading realm tracks
+    private func loadTracksFromRealm() {
+        self.tracks = repository.fetchAllTracks().map { recentTrack in
+            Track(
+                id: recentTrack.id,
+                name: recentTrack.name,
+                data: recentTrack.data,
+                artist: recentTrack.artist,
+                duration: recentTrack.duration,
+                image: recentTrack.image
+            )
+        }
+    }
+    
+    private func observeRecentlyPlayed() {
+        repository.$recentlyPlayedTracks
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$recentlyPlayed)
+    }
+    
+    func addTrack(track: Track) {
+        repository.saveTrack(track: track)
     }
     
     // MARK: - Methods
@@ -44,8 +83,18 @@ class YourTracksViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
             if let index = tracks.firstIndex(where: { $0.id == track.id }) {
                 currentIndex = index
             }
+            repository.saveTrack(track: track) // save in realm
         } catch {
             print("Error in audio playback: \(error.localizedDescription)")
+        }
+    }
+    
+    func delete(offsets: IndexSet) {
+        if let first = offsets.first {
+            stopAudio()
+            let track = tracks[first]
+            tracks.remove(at: first)
+            repository.deleteTrack(id: track.id) // delete in realm
         }
     }
     
@@ -85,13 +134,6 @@ class YourTracksViewModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
             self.player?.play()
         }
         isPlaying.toggle()
-    }
-    
-    func delete(offsets: IndexSet) {
-        if let first = offsets.first {
-            stopAudio()
-            tracks.remove(at: first)
-        }
     }
     
     //MARK: - AVAudioPlayerDelegate

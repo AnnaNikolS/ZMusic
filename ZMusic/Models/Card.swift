@@ -5,7 +5,6 @@
 //  Created by Анна on 18.06.2024.
 //
 
-import Foundation
 import SwiftUI
 
 struct Card: Identifiable {

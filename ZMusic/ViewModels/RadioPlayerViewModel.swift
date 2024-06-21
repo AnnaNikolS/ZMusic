@@ -19,6 +19,7 @@ class RadioCardViewModel: ObservableObject {
     //MARK: - Private Properties
     private var player: AVPlayer?
     
+    // MARK: - Initializer
     init() {
         loadCards()
     }

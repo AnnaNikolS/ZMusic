@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct ZMusicView: View {
+    
+    //MARK: - Properties
+    @StateObject var viewModel = RecentViewModel()
+    
     var body: some View {
         TabView {
             YourTracksView()
@@ -20,7 +24,7 @@ struct ZMusicView: View {
                     Image(systemName: "dot.radiowaves.left.and.right")
                     Text("Radio")
                 }
-            RecentView()
+            RecentView(viewModel: viewModel)
                 .tabItem {
                     Image(systemName: "clock.arrow.circlepath")
                     Text("Recent")

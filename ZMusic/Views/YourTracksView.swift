@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct YourTracksView: View {
     
@@ -13,6 +14,7 @@ struct YourTracksView: View {
     @State private var showFiles = false
     @State private var showDetails = false
     @State private var isDragging = false
+    @State private var showSettings = false
     @Namespace private var playerAnimation
     
     //MARK: - Properties
@@ -34,12 +36,11 @@ struct YourTracksView: View {
                     /// List of tracks
                     List {
                         ForEach(viewModel.tracks) { track in
-                            TrackCellView(track: track, formatDuration: viewModel.formatDuration) 
-                                    .onTapGesture {
-                                        viewModel.playAudio(track: track)
-                                        viewModel.isPlaying = true
-                                
-                            }
+                            TrackCellView(track: track, formatDuration: viewModel.formatDuration)
+                                .onTapGesture {
+                                    viewModel.playAudio(track: track)
+                                    viewModel.isPlaying = true
+                                }
                         }
                         .onDelete(perform: viewModel.delete)
                     }
@@ -70,9 +71,23 @@ struct YourTracksView: View {
                     }
                 }
             }
+            .toolbar {
+                ToolbarItem(placement: .automatic) {
+                    Button {
+                        showSettings.toggle()
+                    } label: {
+                        Image(systemName: "gearshape")
+                            .foregroundStyle(.white)
+                    }
+                }
+            }
+            
         }
         .sheet(isPresented: $showFiles) {
             ImportFileManager(tracks: $viewModel.tracks).ignoresSafeArea()
+        }
+        .sheet(isPresented: $showSettings) {
+            
         }
     }
     

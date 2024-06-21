@@ -5,8 +5,8 @@
 //  Created by Анна on 13.06.2024.
 //
 
-import Foundation
 import SwiftUI
+import AVFoundation
 
 struct Track: Identifiable {
     var id = UUID()
@@ -16,3 +16,4 @@ struct Track: Identifiable {
     var duration: TimeInterval?
     var image: Data?
 }
+

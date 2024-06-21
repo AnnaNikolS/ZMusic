@@ -9,6 +9,7 @@ import SwiftUI
 import ACarousel
 
 struct RadioPlayerView: View {
+    
     //MARK: - Private Properties
     @State private var currentIndex: Int = 0
     

@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import AVFoundation
+import RealmSwift
 
 struct ImportFileManager: UIViewControllerRepresentable {
     
@@ -31,19 +32,22 @@ struct ImportFileManager: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
     
     class Coordinator: NSObject, UIDocumentPickerDelegate {
+        
+        // MARK: - Properties
         var parent: ImportFileManager
         
+        // MARK: - Initializer
         init(parent: ImportFileManager) {
             self.parent = parent
         }
         
+        // MARK: - Methods
         func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
             guard let url = urls.first, url.startAccessingSecurityScopedResource() else { return }
             
             defer { url.stopAccessingSecurityScopedResource() }
             
             do {
-                
                 let document = try Data(contentsOf: url)
                 
                 let asset = AVAsset(url: url)
@@ -74,7 +78,6 @@ struct ImportFileManager: UIViewControllerRepresentable {
                 } else {
                     print("Track already exists")
                 }
-                
             } catch {
                 print("Error loading data: \(error)")
             }

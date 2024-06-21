@@ -6,23 +6,31 @@
 //
 
 import SwiftUI
+import RealmSwift
 
+import SwiftUI
 struct RecentView: View {
     
     //MARK: - Properties
-    @StateObject var viewModel = YourTracksViewModel()
+    @ObservedObject var viewModel: RecentViewModel
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ZStack {
                 RadialGradientView(colors: [.purple, .cyan, .black], location: .bottomTrailing, endRadius: 500)
+                
+                VStack {
+                    List(viewModel.recentlyPlayed) { track in
+                        RecentTrackCellView(track: track, formatDuration: viewModel.formatDuration(_:))
+                    }
+                    .listStyle(.plain)
+                }
             }
-            .navigationTitle("Recent auditions")
+            .navigationTitle("Recent Auditions")
             .customizeNavigationBar()
         }
     }
 }
 
-#Preview {
-    RecentView()
-}
+
+
