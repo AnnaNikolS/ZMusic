@@ -71,9 +71,22 @@ struct YourTracksView: View {
                     }
                 }
             }
+            .toolbar {
+                ToolbarItem(placement: .automatic) {
+                    Button {
+                        showSettings.toggle()
+                    } label: {
+                        Image(systemName: "gearshape")
+                            .foregroundStyle(.white)
+                    }
+                }
+            }
         }
         .sheet(isPresented: $showFiles) {
             ImportFileManager(tracks: $viewModel.tracks).ignoresSafeArea()
+        }
+        .sheet(isPresented: $showSettings) {
+            EqualizerSettingsView(viewModel: viewModel)
         }
     }
     
@@ -154,7 +167,7 @@ struct YourTracksView: View {
                     }
                     .offset(y: -38)
                     
-                    Slider(value: $viewModel.currentTime, in: 0...viewModel.totalTime, step: 1.0) { editing in
+                    Slider(value: $viewModel.currentTime, in: 0...viewModel.totalTime) { editing in
                         isDragging = editing
                         if !editing {
                             viewModel.seekAudio(time: viewModel.currentTime)
@@ -163,12 +176,11 @@ struct YourTracksView: View {
                     .offset(y: -38)
                     .accentColor(.white)
                     .onAppear {
-                        Timer.scheduledTimer(
-                            withTimeInterval: 0.5,
-                            repeats: true) { time in
-                                viewModel.update()
-                            }
+                        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
+                            viewModel.updateCurrentTime(to: viewModel.currentTime)
+                        }
                     }
+                    
                     
                     HStack(spacing: 40) {
                         customButton(
@@ -211,5 +223,6 @@ struct YourTracksView: View {
 #Preview {
     YourTracksView()
 }
+
 
 

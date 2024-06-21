@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E6071A3C2C1F886E00D69094 /* RadialGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6071A3B2C1F886E00D69094 /* RadialGradientView.swift */; };
+		E60DFC722C26328A0081983C /* EqualizerSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60DFC712C26328A0081983C /* EqualizerSettingsView.swift */; };
 		E614E62C2C1F9A4500745493 /* YourTracksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E614E62B2C1F9A4500745493 /* YourTracksView.swift */; };
 		E614E62E2C1FBB6F00745493 /* RecentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E614E62D2C1FBB6F00745493 /* RecentView.swift */; };
 		E614E6302C20668200745493 /* TrackCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E614E62F2C20668200745493 /* TrackCellView.swift */; };
@@ -19,6 +20,7 @@
 		E65BBBA62C24EC950057B8E1 /* RecentTracksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65BBBA52C24EC950057B8E1 /* RecentTracksRepository.swift */; };
 		E65BBBAF2C2596850057B8E1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E65BBBAE2C2596850057B8E1 /* RealmSwift */; };
 		E65BBBB12C259AD30057B8E1 /* RealmTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65BBBB02C259AD30057B8E1 /* RealmTrack.swift */; };
+		E67726122C264648000FE116 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = E65BBBAE2C2596850057B8E1 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E696336C2C1B793900769EFF /* ZMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696336B2C1B793900769EFF /* ZMusicApp.swift */; };
 		E696336E2C1B793900769EFF /* ZMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696336D2C1B793900769EFF /* ZMusicView.swift */; };
 		E69633702C1B793B00769EFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E696336F2C1B793B00769EFF /* Assets.xcassets */; };
@@ -32,8 +34,23 @@
 		E6EF70D32C21FC020018F219 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EF70D22C21FC020018F219 /* Card.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E67726132C264648000FE116 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E67726122C264648000FE116 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		E6071A3B2C1F886E00D69094 /* RadialGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialGradientView.swift; sourceTree = "<group>"; };
+		E60DFC712C26328A0081983C /* EqualizerSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualizerSettingsView.swift; sourceTree = "<group>"; };
 		E614E62B2C1F9A4500745493 /* YourTracksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourTracksView.swift; sourceTree = "<group>"; };
 		E614E62D2C1FBB6F00745493 /* RecentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentView.swift; sourceTree = "<group>"; };
 		E614E62F2C20668200745493 /* TrackCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCellView.swift; sourceTree = "<group>"; };
@@ -158,6 +175,7 @@
 				E696336D2C1B793900769EFF /* ZMusicView.swift */,
 				E614E62B2C1F9A4500745493 /* YourTracksView.swift */,
 				E6EF70C42C21E1000018F219 /* RadioPlayerView.swift */,
+				E60DFC712C26328A0081983C /* EqualizerSettingsView.swift */,
 				E614E62D2C1FBB6F00745493 /* RecentView.swift */,
 				E6071A3A2C1F883B00D69094 /* Subviews */,
 			);
@@ -190,6 +208,7 @@
 				E69633642C1B793900769EFF /* Sources */,
 				E69633652C1B793900769EFF /* Frameworks */,
 				E69633662C1B793900769EFF /* Resources */,
+				E67726132C264648000FE116 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -262,6 +281,7 @@
 				E696337F2C1B7A0B00769EFF /* YourTracksViewModel.swift in Sources */,
 				E65BBBA22C24E6C10057B8E1 /* RecentTrack.swift in Sources */,
 				E6EF70D12C21FBEF0018F219 /* RadioPlayerViewModel.swift in Sources */,
+				E60DFC722C26328A0081983C /* EqualizerSettingsView.swift in Sources */,
 				E65BBBA42C24E7CC0057B8E1 /* RecentTrackCellView.swift in Sources */,
 				E6EF70C32C21DFEA0018F219 /* RadioCardView.swift in Sources */,
 				E614E6332C2071DA00745493 /* ImportFileManager.swift in Sources */,
@@ -417,19 +437,24 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = "@loader_path/Frameworks";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = iosApp.ZMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -448,19 +473,24 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = "@loader_path/Frameworks";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = iosApp.ZMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
