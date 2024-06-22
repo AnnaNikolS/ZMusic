@@ -95,7 +95,6 @@ struct EqualizerSettingsView: View {
         }
     }
     
-    // Функция для создания кастомного слайдера с прозрачным фоном
     @ViewBuilder
     private func customSlider(value: Binding<Double>, range: ClosedRange<Double>, label: String, minValue: String, maxValue: String) -> some View {
         VStack(alignment: .leading) {
