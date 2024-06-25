@@ -185,10 +185,6 @@ struct YourTracksView: View {
                             }
                         }
                     }
-                    .onDisappear {
-                        viewModel.timer?.invalidate()
-                        viewModel.timer = nil
-                    }
                     
                     HStack(spacing: 40) {
                         customButton(

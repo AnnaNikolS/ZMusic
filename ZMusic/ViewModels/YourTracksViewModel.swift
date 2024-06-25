@@ -30,7 +30,7 @@ class YourTracksViewModel: NSObject, ObservableObject {
     //MARK: - Private Properties
     private var repository: RealmTrackRepository
     private var notificationToken: NotificationToken?
-    var timer: Timer?
+    private var timer: Timer?
     
     // Аудио-система
     private var audioEngine: AVAudioEngine!
@@ -47,6 +47,7 @@ class YourTracksViewModel: NSObject, ObservableObject {
         setupAudioEngine()
         loadTracksFromRealm()
         observeRecentlyPlayed()
+        startBackgroundTimer()
     }
     
     //MARK: - Getters
@@ -148,8 +149,8 @@ class YourTracksViewModel: NSObject, ObservableObject {
                 
                 repository.saveTrack(track: track) // save in realm
                 
-                stopTimer()
-                startTimer()
+                stopBackgroundTimer()
+                startBackgroundTimer()
                 
                 playerNode.installTap(onBus: 0, bufferSize: 1024, format: audioFile.processingFormat) { [weak self] (buffer, when) in
                     guard let self = self else { return }
@@ -174,6 +175,7 @@ class YourTracksViewModel: NSObject, ObservableObject {
         playerNode.stop()
         audioEngine.stop()
         isPlaying = false
+        stopBackgroundTimer()
     }
     
     func forward() {
@@ -290,33 +292,35 @@ class YourTracksViewModel: NSObject, ObservableObject {
         echoNode.feedback = echoDecay
     }
   
-    private func startTimer() {
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
-            guard let self = self, self.isPlaying else { return }
-            self.currentTime += 1.0
-            if self.currentTime >= self.totalTime {
-                self.audioDidFinishPlaying()
+    //MARK: - Timer Methods
+    private func startBackgroundTimer() {
+            timer?.invalidate()
+            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+                guard let self = self else { return }
+                if self.isPlaying {
+                    self.currentTime += 1.0
+                    if self.currentTime >= self.totalTime {
+                        self.audioDidFinishPlaying()
+                    }
+                }
             }
         }
-    }
     
-    private func stopTimer() {
-        timer?.invalidate()
-        timer = nil
-    }
+    private func stopBackgroundTimer() {
+            timer?.invalidate()
+            timer = nil
+        }
     
     private func audioDidFinishPlaying() {
         DispatchQueue.main.async {
-            self.stopTimer()
+            self.stopBackgroundTimer()
             self.currentTime = 0
             self.forward()
         }
     }
     
     deinit {
-        timer?.invalidate()
-        timer = nil
+        stopBackgroundTimer()
     }
 }
 
