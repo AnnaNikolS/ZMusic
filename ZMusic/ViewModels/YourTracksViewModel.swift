@@ -230,23 +230,28 @@ class YourTracksViewModel: NSObject, ObservableObject {
             }
         }
         playerNode.play()
+        isPlaying = true // Обновляем состояние воспроизведения
+        startBackgroundTimer() // Перезапускаем таймер
     }
+
     
     func updateCurrentTime(to time: TimeInterval) {
         DispatchQueue.main.async {
             self.currentTime = time
         }
     }
-    
+
     func playPause() {
         if isPlaying {
             playerNode.pause()
+            stopBackgroundTimer()
         } else {
             playerNode.play()
+            startBackgroundTimer()
         }
         isPlaying.toggle()
     }
-    
+
     //MARK: - Realm Methods
     private func loadTracksFromRealm() {
         self.tracks = repository.fetchAllTracks().map { recentTrack in
