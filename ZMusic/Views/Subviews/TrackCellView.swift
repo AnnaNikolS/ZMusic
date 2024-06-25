@@ -10,12 +10,11 @@ import SwiftUI
 struct TrackCellView: View {    
     
     //MARK: - Properties
-    let track: Track
-    let formatDuration: (_ duration: TimeInterval?) -> String
+    @ObservedObject var viewModel: TrackCellViewModel
     
     var body: some View {
         HStack {
-            if let uiImage = UIImage(data: track.image ?? Data()) {
+            if let uiImage = UIImage(data: viewModel.image) {
                 Image(uiImage: uiImage)
                     .resizable()
                     .frame(width: 60, height: 60)
@@ -34,14 +33,14 @@ struct TrackCellView: View {
             }
             
             VStack(alignment: .leading) {
-                Text(track.name)
+                Text(viewModel.name)
                     .font(.headline)
-                Text(track.artist ?? "Unknown artist")
+                Text(viewModel.artist)
             }
             
             Spacer()
             
-            Text(formatDuration(track.duration))
+            Text(viewModel.duration)
                 .font(.subheadline)
                 .foregroundColor(.white)
         }

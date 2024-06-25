@@ -10,21 +10,23 @@ import SwiftUI
 struct ZMusicView: View {
     
     //MARK: - Properties
-    @StateObject var viewModel = RecentViewModel()
+    @StateObject var recentViewModel = RecentViewModel()
+    @StateObject var radioCardViewModel = RadioCardViewModel()
+    @StateObject var yourTracksViewModel = YourTracksViewModel()
     
     var body: some View {
         TabView {
-            YourTracksView()
+            YourTracksView(viewModel: yourTracksViewModel)
                 .tabItem {
                     Image(systemName: "music.note.list")
                     Text("Home")
                 }
-            RadioPlayerView()
+            RadioPlayerView(viewModel: radioCardViewModel)
                 .tabItem {
                     Image(systemName: "dot.radiowaves.left.and.right")
                     Text("Radio")
                 }
-            RecentView(viewModel: viewModel)
+            RecentView(viewModel: recentViewModel)
                 .tabItem {
                     Image(systemName: "clock.arrow.circlepath")
                     Text("Recent")

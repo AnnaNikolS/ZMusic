@@ -6,21 +6,18 @@
 //
 
 import SwiftUI
-import SwiftUI
 import AVFoundation
 import RealmSwift
 
-// Кастомный стиль для слайдера, чтобы фон был прозрачным
-import SwiftUI
-
 struct EqualizerSettingsView: View {
+    
+    //MARK: - Properties
     @ObservedObject var viewModel: YourTracksViewModel
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
         NavigationStack {
             ZStack {
-                
                 RadialGradientView(colors: [.red.opacity(0.5), .purple.opacity(0.5), .blue.opacity(0.5), .black], location: .bottom, endRadius: 500)
                 
                 ScrollView {
@@ -95,7 +92,8 @@ struct EqualizerSettingsView: View {
         }
     }
     
-    @ViewBuilder
+    
+    //MARK: - Private Methods
     private func customSlider(value: Binding<Double>, range: ClosedRange<Double>, label: String, minValue: String, maxValue: String) -> some View {
         VStack(alignment: .leading) {
             Text(label)

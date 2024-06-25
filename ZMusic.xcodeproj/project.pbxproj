@@ -14,6 +14,7 @@
 		E614E6302C20668200745493 /* TrackCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E614E62F2C20668200745493 /* TrackCellView.swift */; };
 		E614E6332C2071DA00745493 /* ImportFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E614E6322C2071DA00745493 /* ImportFileManager.swift */; };
 		E614E6382C2097D900745493 /* CustomizeNB + CustomizeTB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E614E6372C2097D900745493 /* CustomizeNB + CustomizeTB.swift */; };
+		E646B2972C28836700589DE9 /* TrackCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E646B2962C28836700589DE9 /* TrackCellViewModel.swift */; };
 		E65BBBA02C24E4900057B8E1 /* RecentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65BBB9F2C24E4900057B8E1 /* RecentViewModel.swift */; };
 		E65BBBA22C24E6C10057B8E1 /* RecentTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65BBBA12C24E6C10057B8E1 /* RecentTrack.swift */; };
 		E65BBBA42C24E7CC0057B8E1 /* RecentTrackCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65BBBA32C24E7CC0057B8E1 /* RecentTrackCellView.swift */; };
@@ -56,6 +57,7 @@
 		E614E62F2C20668200745493 /* TrackCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCellView.swift; sourceTree = "<group>"; };
 		E614E6322C2071DA00745493 /* ImportFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportFileManager.swift; sourceTree = "<group>"; };
 		E614E6372C2097D900745493 /* CustomizeNB + CustomizeTB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomizeNB + CustomizeTB.swift"; sourceTree = "<group>"; };
+		E646B2962C28836700589DE9 /* TrackCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCellViewModel.swift; sourceTree = "<group>"; };
 		E65BBB9E2C24D6DE0057B8E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E65BBB9F2C24E4900057B8E1 /* RecentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentViewModel.swift; sourceTree = "<group>"; };
 		E65BBBA12C24E6C10057B8E1 /* RecentTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTrack.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				E696337E2C1B7A0B00769EFF /* YourTracksViewModel.swift */,
 				E6EF70D02C21FBEF0018F219 /* RadioPlayerViewModel.swift */,
 				E65BBB9F2C24E4900057B8E1 /* RecentViewModel.swift */,
+				E646B2962C28836700589DE9 /* TrackCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				E6EF70C32C21DFEA0018F219 /* RadioCardView.swift in Sources */,
 				E614E6332C2071DA00745493 /* ImportFileManager.swift in Sources */,
 				E69633812C1B7A2800769EFF /* Track.swift in Sources */,
+				E646B2972C28836700589DE9 /* TrackCellViewModel.swift in Sources */,
 				E614E62C2C1F9A4500745493 /* YourTracksView.swift in Sources */,
 				E614E6302C20668200745493 /* TrackCellView.swift in Sources */,
 				E65BBBA62C24EC950057B8E1 /* RecentTracksRepository.swift in Sources */,

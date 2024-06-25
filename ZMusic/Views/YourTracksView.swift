@@ -18,7 +18,7 @@ struct YourTracksView: View {
     @Namespace private var playerAnimation
     
     //MARK: - Properties
-    @StateObject var viewModel = YourTracksViewModel()
+    @ObservedObject var viewModel: YourTracksViewModel
     
     //MARK: - Getters
     var frameImage: CGFloat {
@@ -36,7 +36,9 @@ struct YourTracksView: View {
                     /// List of tracks
                     List {
                         ForEach(viewModel.tracks) { track in
-                            TrackCellView(track: track, formatDuration: viewModel.formatDuration)
+                            let trackCellVM = TrackCellViewModel(formatDuration: viewModel.formatDuration, track: track)
+                            
+                            TrackCellView(viewModel: trackCellVM)
                                 .onTapGesture {
                                     viewModel.playAudio(track: track)
                                     viewModel.isPlaying = true
@@ -118,7 +120,6 @@ struct YourTracksView: View {
                 }
                 
                 if !showDetails {
-                    /// упростить
                     VStack(alignment: .leading) {
                         if let currentTrack = viewModel.currentTrack {
                             Text(currentTrack.name)
@@ -167,20 +168,27 @@ struct YourTracksView: View {
                     }
                     .offset(y: -38)
                     
-                    Slider(value: $viewModel.currentTime, in: 0...viewModel.totalTime) { editing in
+                    Slider(value: $viewModel.currentTime, in: 0...viewModel.totalTime, onEditingChanged: { editing in
                         isDragging = editing
                         if !editing {
                             viewModel.seekAudio(time: viewModel.currentTime)
                         }
-                    }
+                    })
                     .offset(y: -38)
                     .accentColor(.white)
                     .onAppear {
-                        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
-                            viewModel.updateCurrentTime(to: viewModel.currentTime)
+                        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
+                            DispatchQueue.main.async {
+                                if viewModel.isPlaying && !isDragging {
+                                    viewModel.updateCurrentTime(to: viewModel.currentTime)
+                                }
+                            }
                         }
                     }
-                    
+                    .onDisappear {
+                        viewModel.timer?.invalidate()
+                        viewModel.timer = nil
+                    }
                     
                     HStack(spacing: 40) {
                         customButton(
@@ -221,7 +229,7 @@ struct YourTracksView: View {
 }
 
 #Preview {
-    YourTracksView()
+    YourTracksView(viewModel: YourTracksViewModel())
 }
 
 

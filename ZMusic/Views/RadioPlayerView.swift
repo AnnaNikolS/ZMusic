@@ -14,7 +14,7 @@ struct RadioPlayerView: View {
     @State private var currentIndex: Int = 0
     
     //MARK: - Properties
-    @StateObject var viewModel = RadioCardViewModel()
+    @ObservedObject var viewModel: RadioCardViewModel
     
     var body: some View {
         NavigationStack {
@@ -22,11 +22,13 @@ struct RadioPlayerView: View {
                 RadialGradientView(colors: [.darkPink, .pink, .orange, .black], location: .bottomTrailing, endRadius: 500)
                 
                 VStack(alignment: .leading) {
-                    Text("Настройся на волну!")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.leading, 16)
-                        .fontDesign(.rounded)
-                        .font(.system(size: 21))
+                    HStack {
+                        Text("Настройся на волну!")
+                            .padding(.leading, 16)
+                            .fontDesign(.rounded)
+                            .font(.system(size: 21))
+                        Spacer()
+                    }
                     Spacer()
                 }
                 
@@ -56,5 +58,5 @@ struct RadioPlayerView: View {
 }
 
 #Preview {
-    RadioPlayerView()
+    RadioPlayerView(viewModel: RadioCardViewModel())
 }
