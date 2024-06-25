@@ -114,14 +114,16 @@ class YourTracksViewModel: NSObject, ObservableObject {
         equalizer.bands[2].gain = highGain
     }
     
-    // MARK: - Methods
+    // MARK: - Format Duration Methods
     func formatDuration(_ duration: TimeInterval?) -> String {
         guard let duration = duration else { return "00:00" }
         let minutes = Int(duration) / 60
         let seconds = Int(duration) % 60
         return String(format: "%02d:%02d", minutes, seconds)
     }
-   
+    
+    // MARK: - Audio Methods
+    /// Запуск трека
     func playAudio(track: Track) {
         do {
             let tempFileURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("temp.mp3")
@@ -154,15 +156,13 @@ class YourTracksViewModel: NSObject, ObservableObject {
                 
                 playerNode.installTap(onBus: 0, bufferSize: 1024, format: audioFile.processingFormat) { [weak self] (buffer, when) in
                     guard let self = self else { return }
-                    let playbackTime = Double(buffer.frameLength) / audioFile.processingFormat.sampleRate
                     DispatchQueue.main.async {
-                        if self.currentTime /*+ playbackTime*/ >= self.totalTime {
+                        if self.currentTime >= self.totalTime {
                             self.audioDidFinishPlaying()
                         }
                     }
                 }
             }
-            
         } catch {
             print("Error in audio playback: \(error.localizedDescription)")
         }
@@ -170,7 +170,8 @@ class YourTracksViewModel: NSObject, ObservableObject {
             self.currentTime = 0
         }
     }
-
+    
+    /// Остановка трека
     func stopAudio() {
         playerNode.stop()
         audioEngine.stop()
@@ -178,32 +179,33 @@ class YourTracksViewModel: NSObject, ObservableObject {
         stopBackgroundTimer()
     }
     
+    /// Следующий трек
     func forward() {
         guard let currentIndex = currentIndex else { return }
         let nextIndex = currentIndex + 1 < tracks.count ? currentIndex + 1 : 0
         playAudio(track: tracks[nextIndex])
-        
-        DispatchQueue.main.async {
-            self.currentTime = 0
-        }
     }
     
+    /// Предыдущий трек
     func backward() {
         guard let currentIndex = currentIndex else { return }
         let previousIndex = currentIndex > 0 ? currentIndex - 1 : tracks.count - 1
         playAudio(track: tracks[previousIndex])
     }
     
+    /// Преобразование времени в секундах в количество аудиофреймов
     func calculateSampleTime(from time: TimeInterval, sampleRate: Double) -> AVAudioFramePosition {
         return AVAudioFramePosition(time * sampleRate)
     }
     
+    /// Вычисление общей длительности аудиофайла в секундах
     func calculateDuration(of audioFile: AVAudioFile) -> TimeInterval {
         let sampleRate = audioFile.processingFormat.sampleRate
         let totalSamples = audioFile.length
         return TimeInterval(totalSamples) / sampleRate
     }
     
+    /// Остановка текущего воспроизводимого аудиофайла и воспроизведение с указанного времени
     func seekAudio(time: TimeInterval) {
         guard let audioFile = audioFile else { return }
         
@@ -223,36 +225,46 @@ class YourTracksViewModel: NSObject, ObservableObject {
         
         playerNode.scheduleSegment(audioFile, startingFrame: sampleTime, frameCount: remainingSamples, at: nil) {
             DispatchQueue.main.async {
-                self.currentTime = validTime
                 if self.currentTime >= self.totalTime {
                     self.audioDidFinishPlaying()
                 }
             }
         }
-        playerNode.play()
-        isPlaying = true // Обновляем состояние воспроизведения
-        startBackgroundTimer() // Перезапускаем таймер
+        currentTime = validTime
+        if isPlaying {
+            playerNode.play()
+        }
+        startBackgroundTimer()
     }
-
     
+    /// Обновление текущего времени на котором играет трек
     func updateCurrentTime(to time: TimeInterval) {
         DispatchQueue.main.async {
             self.currentTime = time
         }
     }
-
+    
+    /// Остановка и воспроизведение трека
     func playPause() {
         if isPlaying {
             playerNode.pause()
             stopBackgroundTimer()
         } else {
-            playerNode.play()
-            startBackgroundTimer()
+            if currentTime >= totalTime {
+                
+                if let currentTrack = currentTrack {
+                    playAudio(track: currentTrack)
+                }
+            } else {
+                playerNode.play()
+                startBackgroundTimer()
+            }
         }
         isPlaying.toggle()
     }
-
+    
     //MARK: - Realm Methods
+    /// Загрузка треков из базы данных Realm и преобразование их в массив объектов Track
     private func loadTracksFromRealm() {
         self.tracks = repository.fetchAllTracks().map { recentTrack in
             Track(
@@ -266,12 +278,14 @@ class YourTracksViewModel: NSObject, ObservableObject {
         }
     }
     
+    /// Наблюдение за изменениями в списке недавно воспроизведенных треков в базе данных
     private func observeRecentlyPlayed() {
         repository.$recentlyPlayedTracks
             .receive(on: DispatchQueue.main)
             .assign(to: &$recentlyPlayed)
     }
     
+    /// Удаление трека
     func delete(offsets: IndexSet) {
         if let first = offsets.first {
             stopAudio()
@@ -281,11 +295,12 @@ class YourTracksViewModel: NSObject, ObservableObject {
         }
     }
     
+    /// Добавление трека
     func addTrack(track: Track) {
         repository.saveTrack(track: track)
     }
     
-    // Equalizer method
+    /// Применение настроек эквалайзера к текущему треку
     func applyEqualizerSettings() {
         equalizer.bands[0].gain = lowGain
         equalizer.bands[1].gain = midGain
@@ -296,26 +311,29 @@ class YourTracksViewModel: NSObject, ObservableObject {
         echoNode.delayTime = TimeInterval(echoDelay)
         echoNode.feedback = echoDecay
     }
-  
+    
     //MARK: - Timer Methods
+    /// Запуск таймера, работающего в фоновом режиме
     private func startBackgroundTimer() {
-            timer?.invalidate()
-            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
-                guard let self = self else { return }
-                if self.isPlaying {
-                    self.currentTime += 1.0
-                    if self.currentTime >= self.totalTime {
-                        self.audioDidFinishPlaying()
-                    }
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+            guard let self = self else { return }
+            if self.isPlaying {
+                self.currentTime += 1.0
+                if self.currentTime >= self.totalTime {
+                    self.audioDidFinishPlaying()
                 }
             }
         }
+    }
     
+    /// Остановка таймера
     private func stopBackgroundTimer() {
-            timer?.invalidate()
-            timer = nil
-        }
+        timer?.invalidate()
+        timer = nil
+    }
     
+    /// Вызывается, когда текущий трек заканчивает воспроизведение
     private func audioDidFinishPlaying() {
         DispatchQueue.main.async {
             self.stopBackgroundTimer()
@@ -324,8 +342,8 @@ class YourTracksViewModel: NSObject, ObservableObject {
         }
     }
     
+    /// Во избежание утечки памяти и ненужного выполнения кода после уничтожения объекта
     deinit {
         stopBackgroundTimer()
     }
 }
-
