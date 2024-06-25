@@ -8,7 +8,6 @@
 import SwiftUI
 import RealmSwift
 
-import SwiftUI
 struct RecentView: View {
     
     //MARK: - Properties
