@@ -17,7 +17,7 @@
 |    -------------   |  -------------   | ------------- |
 | ![IMG_1985](https://github.com/AnnaNikolS/ZMusic/assets/137338922/ed73c786-dac0-4d8e-a118-60e912a7d98c)| ![IMG_1982](https://github.com/AnnaNikolS/ZMusic/assets/137338922/a4a130ab-5d6d-4757-9773-fe55d05db216)| ![IMG_1983](https://github.com/AnnaNikolS/ZMusic/assets/137338922/cb00df9b-8b10-40c6-afe3-71ff5a9aaf81)|
 
-|    Главный экран   | Файловая система | Удаление      |
+|    Радио   | Радио | Недавние треки      |
 |    -------------   |  -------------   | ------------- |
 | ![IMG_1986](https://github.com/AnnaNikolS/ZMusic/assets/137338922/dbe85ae3-c14f-4909-96b6-55ab68633e65) | ![IMG_1987](https://github.com/AnnaNikolS/ZMusic/assets/137338922/3bde0f0c-64a4-403d-b001-ff310fbdbcbf) | ![IMG_1988](https://github.com/AnnaNikolS/ZMusic/assets/137338922/908aa556-743a-4542-930b-edbeb741f0f3) |
 
