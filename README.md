@@ -7,17 +7,22 @@
 5. Перемотка, стоп/пауза, следующий/предыдущий трек, отслеживание текущего времени на котором играет песня, удаление треков.
 6. 6 различных радио-станций, помещенных в ACarousel.
 7. Экран с недавно прослушанными песнями, которые сохраняются в базу данных Realm.
- 
- 
-|    Главный экран   | Файловая система | Удаление      |
-|    -------------   |  -------------   | ------------- |
-|  ![IMG_1992 1](https://github.com/AnnaNikolS/ZMusic/assets/137338922/6be3b693-3fe8-45ca-8e00-f56912ee1a1e) |![IMG_1980](https://github.com/AnnaNikolS/ZMusic/assets/137338922/2e022eab-16ab-49b4-a454-e3ef8fb5986b)| ![IMG_1990](https://github.com/AnnaNikolS/ZMusic/assets/137338922/ea6a46a3-417b-4b8e-94c9-500572768e10)|
 
-|     Полный экран     |    Эквалайзер    |   Эквалайзер  |
-|    -------------     |  -------------   | ------------- |
-| ![IMG_1985 1](https://github.com/AnnaNikolS/ZMusic/assets/137338922/82ef5113-460c-4648-9af7-365545a1eee1) | ![IMG_1982](https://github.com/AnnaNikolS/ZMusic/assets/137338922/a4a130ab-5d6d-4757-9773-fe55d05db216)| ![IMG_1983](https://github.com/AnnaNikolS/ZMusic/assets/137338922/cb00df9b-8b10-40c6-afe3-71ff5a9aaf81)|
+<p align="center">
+  <img src="https://github.com/AnnaNikolS/ZMusic/assets/137338922/6be3b693-3fe8-45ca-8e00-f56912ee1a1e" alt="Главный экран" width="320"/>
+  <img src="https://github.com/AnnaNikolS/ZMusic/assets/137338922/2e022eab-16ab-49b4-a454-e3ef8fb5986b" alt="Файловая система" width="320"/>
+  <img src="https://github.com/AnnaNikolS/ZMusic/assets/137338922/ea6a46a3-417b-4b8e-94c9-500572768e10" alt="Удаление" width="320"/>
+</p>
 
-|    Радио   | Радио | Недавние треки      |
-|    -------------   |  -------------   | ------------- |
-| ![IMG_1986-1](https://github.com/AnnaNikolS/ZMusic/assets/137338922/21c48156-d7bb-4e64-b434-eeaf7e9ceac4) | ![IMG_1987-1](https://github.com/AnnaNikolS/ZMusic/assets/137338922/0453c186-4ef7-41f3-aa39-6208b8caa8c1) | ![IMG_1988](https://github.com/AnnaNikolS/ZMusic/assets/137338922/908aa556-743a-4542-930b-edbeb741f0f3) |
+<p align="center">
+  <img src="https://github.com/AnnaNikolS/ZMusic/assets/137338922/82ef5113-460c-4648-9af7-365545a1eee1" alt="Полный экран" width="320"/>
+  <img src="https://github.com/AnnaNikolS/ZMusic/assets/137338922/a4a130ab-5d6d-4757-9773-fe55d05db216" alt="Эквалайзер" width="320"/>
+  <img src="https://github.com/AnnaNikolS/ZMusic/assets/137338922/cb00df9b-8b10-40c6-afe3-71ff5a9aaf81" alt="Эквалайзер" width="320"/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/AnnaNikolS/ZMusic/assets/137338922/21c48156-d7bb-4e64-b434-eeaf7e9ceac4" alt="Радио" width="320"/>
+  <img src="https://github.com/AnnaNikolS/ZMusic/assets/137338922/0453c186-4ef7-41f3-aa39-6208b8caa8c1" alt="Радио" width="320"/>
+  <img src="https://github.com/AnnaNikolS/ZMusic/assets/137338922/908aa556-743a-4542-930b-edbeb741f0f3" alt="Недавние треки" width="320"/>
+</p>
 
